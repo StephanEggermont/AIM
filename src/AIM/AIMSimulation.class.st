@@ -9,6 +9,14 @@ Class {
 	#tag : 'Core'
 }
 
+{ #category : 'as yet unclassified' }
+AIMSimulation >> afterStep [
+]
+
+{ #category : 'as yet unclassified' }
+AIMSimulation >> beforeStep [
+]
+
 { #category : 'accessing' }
 AIMSimulation >> clock [
 	^ clock
@@ -41,7 +49,9 @@ AIMSimulation >> initialize [
 
 { #category : 'as yet unclassified' }
 AIMSimulation >> step [
-	clock step
+	self beforeStep.
+	clock step.
+	self afterStep
 ]
 
 { #category : 'as yet unclassified' }
